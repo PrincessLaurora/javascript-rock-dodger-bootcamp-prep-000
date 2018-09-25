@@ -84,6 +84,9 @@ function endGame() {
   clearInterval(gameInterval)
   ROCKS.forEach(function(rock) { rock.remove() })
   document.removeEventListener('keydown', moveDodger)
+    START.innerHTML = 'VUOI RIPROVARE ANCHE SE SEI SCARSO?'
+  START.style.display = 'inline'
+  
   return alert('TA PECCAU, O SHRIMPU!')
 }
   
