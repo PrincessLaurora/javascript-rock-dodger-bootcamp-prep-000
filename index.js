@@ -81,8 +81,8 @@ function createRock(x) {
  * Finally, alert "YOU LOSE!" to the player.
  */
 function endGame() {
-  val gameInterval = clearInterval(null)
-  ROCKS.remove
+  clearInterval(gameInterval)
+  ROCKS.forEach(function(rock) { rock.remove() })
   
 }
 
