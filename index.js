@@ -68,11 +68,7 @@ function createRock(x) {
     
     if (checkCollision(rock)) {
       return endGame()}
-      else 
-    
   
-    rock.style.top = `${top += 2}px`
- 
     if (top < 360) {
       window.requestAnimationFrame(step)
     }
