@@ -10,7 +10,7 @@ const RIGHT_ARROW = 39 // use e.which!
 const ROCKS = []
 const START = document.getElementById('start')
 
-var gameInterval = null
+var gameInterval = null;
 
 
 dodger.style.backgroundColor = "yellow";
@@ -32,7 +32,7 @@ function checkCollision(rock) {
     return (
       (rockLeftEdge <= dodgerLeftEdge && rockRightEdge >= dodgerLeftEdge) ||
       (rockLeftEdge >= dodgerLeftEdge && rockRightEdge <= dodgerRightEdge)||     
-      (rockLeftEdge <= dodgerRightEdge && rockRightEdge >= dodgerRightEdge)  ) 
+      (rockLeftEdge <= dodgerRightEdge && rockRightEdge >= dodgerRightEdge)  ) ;
     }
   
 }
@@ -44,25 +44,25 @@ function createRock(x) {
   rock.style.left = `${x}px`;
 
   // Hmmm, why would we have used `var` here?
-  var top = 0
+  var top = 0;
 
-  rock.style.top = top
+  rock.style.top = top;
 
   GAME.appendChild(rock);
 
 
   
   function moveRock() {
-    rock.style.top = `${top += 2}px`
+    rock.style.top = `${top += 2}px`;
     
     if (checkCollision(rock)) {
       return endGame()}
   
     if (top < GAME_HEIGHT) {
-      window.requestAnimationFrame(moveRock)
+      window.requestAnimationFrame(moveRock);
     }
  else {
-    rock.remove ()
+    rock.remove ();
 }
 }
   window.requestAnimationFrame(moveRock)
@@ -119,14 +119,11 @@ function moveDodgerRight() {
   var left = parseInt(rightNumbers, 10)
  
   if (left < 360) {
-    dodger.style.left = `${left + 4}px`
+    dodger.style.left = `${left + 4}px`;
   }
 }
 
-/**
- * @param {string} p The position property
- * @returns {number} The position as an integer (without 'px')
- */
+
 function positionToInteger(p) {
   return parseInt(p.split('px')[0]) || 0
 }
@@ -134,7 +131,7 @@ function positionToInteger(p) {
 function start() {
   window.addEventListener('keydown', moveDodger)
 
-  START.style.display = 'none'
+  START.style.display = 'none';
 
   gameInterval = setInterval(function() {
     createRock(Math.floor(Math.random() *  (GAME_WIDTH - 20)))
