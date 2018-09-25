@@ -75,6 +75,8 @@ function createRock(x) {
  else {
     rock.remove ()
 }
+}
+  window.requestAnimationFrame(moveRock)
     
     // implement me!
     // (use the comments below to guide you!)
