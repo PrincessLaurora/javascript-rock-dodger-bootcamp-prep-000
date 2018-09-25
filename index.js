@@ -64,6 +64,10 @@ function createRock(x) {
    * seems like a good pace.)
    */
   function moveRock() {
+    if (checkCollision(rock)) {
+      return endGame()}
+      else 
+    
     function step () {
     rock.style.top = `${top += 2}px`
  
