@@ -84,15 +84,22 @@ function endGame() {
 }
 
 function moveDodger(e) {
-document.addEventListener('keydown', function(e) {
-  if (e.which === 37) {
-    moveDodgerLeft()
+const code = e.which
+
+  if ([LEFT_ARROW, RIGHT_ARROW].indexOf(code) > -1) {
+    e.preventDefault()
+    e.stopPropagation()
   }
-  if (e.which === 39) {
+
+  if (code === LEFT_ARROW) {
+    moveDodgerLeft()
+  } else if (code === RIGHT_ARROW) {
     moveDodgerRight()
   }
-})
 }
+
+
+
 function moveDodgerLeft() {
   var leftNumbers = dodger.style.left.replace('px', '');
   var left = parseInt(leftNumbers, 10);
