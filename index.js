@@ -71,7 +71,8 @@ function createRock(x) {
       window.requestAnimationFrame(step)
     }
   }
-    
+    window.requestAnimationFrame(step)
+}
     
     // implement me!
     // (use the comments below to guide you!)
