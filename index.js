@@ -68,7 +68,7 @@ function createRock(x) {
       return endGame()}
       else 
     
-    function step () {
+  
     rock.style.top = `${top += 2}px`
  
     if (top < 360) {
