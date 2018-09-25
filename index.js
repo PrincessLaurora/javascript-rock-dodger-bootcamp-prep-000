@@ -84,9 +84,9 @@ function endGame() {
   clearInterval(gameInterval)
   ROCKS.forEach(function(rock) { rock.remove() })
   document.removeEventListener('keydown, moveDodger')
-  
-  
+  return alert('TA PECCAU, O SHRIMPU!')
 }
+  
 
 function moveDodger(e) {
 const code = e.which
